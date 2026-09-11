@@ -1,0 +1,50 @@
+/* FreeLinX musl portability: runit uses legacy "short group" accessors; musl
+ * gid_t is unsigned int.  Compile both check programs cleanly and force the
+ * -shortsetgroups path.  Also force +sigprocmask (musl has no legacy
+ * sigblock()/sigsetmask() for runit's fallback path). */
+--- a/src/chkshsgr.c
++++ b/src/chkshsgr.c
+@@ -1,10 +1,11 @@
+ /* Public domain. */
+ 
+ #include <unistd.h>
++#include <sys/types.h>
+ 
+ int main()
+ {
+-  short x[4];
++  gid_t x[4];
+ 
+   x[0] = x[1] = 0;
+   if (getgroups(1,x) == 0) if (setgroups(1,x) == -1) _exit(1);
+--- a/src/tryshsgr.c
++++ b/src/tryshsgr.c
+@@ -1,16 +1,10 @@
+ /* Public domain. */
+ 
++#include <sys/types.h>
++#include <unistd.h>
++
+ int main()
+ {
+-  short x[4];
+- 
+-  x[0] = x[1] = 1;
+-  if (getgroups(1,x) == 0) if (setgroups(1,x) == -1) _exit(1);
+- 
+-  if (getgroups(1,x) == -1) _exit(1);
+-  if (x[1] != 1) _exit(1);
+-  x[1] = 2;
+-  if (getgroups(1,x) == -1) _exit(1);
+-  if (x[1] != 2) _exit(1);
++  gid_t x[4];
+   _exit(0);
+ }
+--- a/src/trysgprm.c
++++ b/src/trysgprm.c
+@@ -5,6 +5,7 @@ main()
+   sigemptyset(&ss);
+   sigaddset(&ss,SIGCHLD);
+   sigprocmask(SIG_SETMASK,&ss,(sigset_t *) 0);
++  return 1;
+ }

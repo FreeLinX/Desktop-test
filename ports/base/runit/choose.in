@@ -1,0 +1,6 @@
+#!/bin/sh
+# runit djb-style choose helper: compile+link+run a try program and emit the
+# winning header (high) or fallback (low). Arguments: mode tryprog high low.
+mode="$1"; try="$2"; high="$3"; low="$4"
+./compile "$try.c" && ./load "$try" && ./"$try" \
+  && cat "$high" || cat "$low"

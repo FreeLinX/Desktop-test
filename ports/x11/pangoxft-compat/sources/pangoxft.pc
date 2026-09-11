@@ -1,0 +1,11 @@
+prefix=/home/kanan/FreeLinX-workspace/ports/build/deps/x11
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: pangoxft
+Description: FreeLinX pangoxft compatibility (PangoCairo over cairo-xlib)
+Version: 1.56.4
+Requires: pangocairo
+Requires.private: cairo-xlib xft
+Cflags: -I${includedir}
+Libs: -L${libdir} -lpangoxft

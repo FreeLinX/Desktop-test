@@ -1,0 +1,75 @@
+#!/bin/sh
+# FreeLinX /init - runit-based init with a bootstrap rescue fallback.
+#
+# pid 1: mount the pseudo filesystems, bring up the hostname, then exec
+# runsvdir to supervise the services in /var/service (dbus, ..., X/Openbox
+# session). If runsvdir is missing we drop to a rescue shell.
+
+set -eu
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+export PATH
+
+# FreeLinX default interactive shell for terminals (sakura/GTK apps read $SHELL).
+export SHELL=/bin/sh
+export TERM=xterm
+# FreeLinX single session bus address (dbus service listens here).
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket
+
+umask 022
+
+# --- pseudo filesystems -----------------------------------------------------
+mount -t proc     proc     /proc 2>/dev/null || :
+mount -t sysfs    sysfs    /sys   2>/dev/null || :
+mount -t devtmpfs devtmpfs /dev   2>/dev/null || :
+mkdir -p /dev/pts /run/user /dev/shm
+mount -t devpts -o gid=5,mode=0620,ptmxmode=0666 devpts /dev/pts 2>/dev/null || :
+rm -f /dev/ptmx && ln -s /dev/pts/ptmx /dev/ptmx
+mount -t tmpfs    tmpfs    /run   2>/dev/null || :
+
+# --- PS/2 input fixtures ------------------------------------------------------
+# The Xorg flinput driver reads the QEMU virtual PS/2 keyboard and mouse from
+# /dev/fl-kbd and /dev/fl-pointer.  Resolve the actual evdev nodes now (while
+# /proc and devtmpfs are up) so the fixtures exist before any X service runs.
+rm -f /dev/fl-kbd /dev/fl-pointer
+NAME=""
+HANDLER=""
+fl_decide() {
+    case "$NAME" in
+        *[Kk]eyboard*) ln -sf "/dev/input/$HANDLER" /dev/fl-kbd ;;
+        *[Mm]ouse*|*[Ee]xplorer*) ln -sf "/dev/input/$HANDLER" /dev/fl-pointer ;;
+    esac
+}
+while IFS= read -r l; do
+    case "$l" in
+        'I:'*) fl_decide; NAME=""; HANDLER="" ;;
+        'Handler='*) HANDLER="${l#Handler=}"; HANDLER="${HANDLER%% *}" ;;
+        'Name="'*) NAME="${l#Name=\"}"; NAME="${NAME%\"}" ;;
+    esac
+done < /proc/bus/input/devices
+fl_decide
+
+# --- XKB defaults (kept for GTK apps / X clients; the X server itself is
+# configured through xorg.conf, so do NOT export these before X starts) ------
+# XKB_DEFAULT_RULES/MODEL/LAYOUT are intentionally used by applications only.
+
+# --- hostname ---------------------------------------------------------------
+_hostname=""
+if [ -r /etc/hostname ]; then
+    _hostname=$(cat /etc/hostname 2>/dev/null | tr -d '[:space:]')
+fi
+[ -n "$_hostname" ] && hostname "$_hostname"
+
+# --- runit service supervision -----------------------------------------------
+if [ -x /sbin/runsvdir ]; then
+    mkdir -p /var/service
+    exec /sbin/runsvdir -P /var/service
+fi
+
+# --- rescue fallback ----------------------------------------------------------
+echo "FreeLinX: runsvdir not found - starting rescue shell." >&2
+if [ -x /bin/sh ]; then
+    exec /bin/sh
+fi
+echo "FreeLinX: no rescue shell available." >&2
+while :; do sleep 1; done

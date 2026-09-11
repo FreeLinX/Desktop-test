@@ -1,0 +1,4 @@
+# FreeLinX/ports - xfce/libxfce4util-4.20.1 : upstream source reference.
+DISTINFO_ARCHIVE=libxfce4util-4.20.1.tar.bz2
+DISTINFO_URL=https://archive.xfce.org/src/xfce/libxfce4util/4.20/libxfce4util-4.20.1.tar.bz2
+DISTINFO_SHA256=84bfc4daab9e466193540c3665eee42b2cf4d24e3f38fc3e8d1e0a2bebe3b8f1

@@ -1,0 +1,4 @@
+# FreeLinX/ports - x11/libfontenc-1.1.9 : upstream source reference.
+DISTINFO_ARCHIVE=libfontenc-1.1.9.tar.xz
+DISTINFO_URL=https://www.x.org/releases/individual/lib/libfontenc-1.1.9.tar.xz
+DISTINFO_SHA256=9d8392705cb10803d5fe1d27d236cbab3f664e26841ce01916bbbe430cf273e2

@@ -1,0 +1,5 @@
+# FreeLinX/ports - graphics/sakura-3.8.9 : upstream source reference.
+DISTINFO_ARCHIVE=sakura-3.8.9.tar.gz
+DISTINFO_NAME=sakura-SAKURA_3_8_9
+DISTINFO_URL=https://codeload.github.com/dabisu/sakura/tar.gz/refs/tags/SAKURA_3_8_9
+DISTINFO_SHA256=46b792098a82ba4affc87a174ae96f32e730396e4f5ba9b699e8071253b085a2

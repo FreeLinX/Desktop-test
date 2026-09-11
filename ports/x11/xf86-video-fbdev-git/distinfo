@@ -1,0 +1,4 @@
+# FreeLinX/ports - x11/xf86-video-fbdev-git : upstream source reference (git master snapshot).
+DISTINFO_ARCHIVE=xf86-video-fbdev-master.tar.gz
+DISTINFO_URL=https://gitlab.freedesktop.org/xorg/driver/xf86-video-fbdev/-/archive/master/xf86-video-fbdev-master.tar.gz
+DISTINFO_SHA256=5debd8c3e9ef110a5f8a17e8122315d59ee541b579c132132f192cd276a4873c

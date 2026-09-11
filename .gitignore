@@ -1,0 +1,40 @@
+# Build trees and large artifacts (never commit)
+src/build/
+kernel/build/
+ports/build/
+ports/work/
+ports/obj/
+ports/staging/
+ports/dist/
+toolchain/
+qemu/
+.venv/
+__pycache__/
+
+# Merged runtime trees inside staging rootfs that mirror ports deps
+ports/build/deps/
+
+# Images / binaries (keep bzImage but drop the big initramfs copies)
+src/build/*.img.gz
+iso/*.img.gz
+iso/*.img
+*.iso
+
+# Test logs and captures
+*.log
+*.ppm
+*.raw
+*.png
+*.pid
+vmtest/serial.log
+vmtest/qemu.log
+vmtest/scratch*.log
+vmtest/*.pid
+
+# Editor / OS noise
+*.swp
+*~
+.DS_Store
+
+# Nested working repos
+drivers/.git/

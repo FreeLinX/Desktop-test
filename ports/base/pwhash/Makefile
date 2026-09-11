@@ -1,0 +1,33 @@
+# FreeLinX/ports - base/pwhash : NetBSD 10.1 `/usr/bin/pwhash`.
+NAME   := pwhash
+VERSION:= 10.1
+CATEGORY:= base
+LICENSE:= BSD-2-Clause
+DEPENDENCIES:=
+BUILD_DEPENDENCIES:= musl (via FreeLinX toolchain sysroot)
+TARGET := $(FREELINX_TRIPLE)
+PREFIX := /
+
+INSTALL_BIN:= pwhash
+INSTALL_RELPATH:= bin/pwhash
+
+include ../../mk/base-port.mk
+
+SRC_DIR  = $(FREELINX_BUILD_DIR)/work/$(NAME)
+OBJ_DIR  = $(FREELINX_BUILD_DIR)/obj/$(NAME)
+BUILD_BIN = $(SRC_DIR)/$(NAME)
+
+NETBSD_MEMBERS = usr/src/usr.bin/pwhash/pwhash.c
+
+PORT_SRCS = usr.bin/pwhash/pwhash.c
+COMPAT_SRCS += $(FLX_COMPAT)/pw_gensalt.c
+COMPAT_SRCS += $(FLX_COMPAT)/pw_getconf.c
+
+CRYPT_PREFIX = $(FREELINX_SYSROOT)
+FLX_LD          = $(CC) $(FREELINX_CFLAGS) $(FREELINX_LDFLAGS) \
+			-nostdlib -L$(FREELINX_SYSROOT)/lib \
+			$(FLX_CRT) \
+			$(OBJ_DIR)/*.o \
+			-lcrypt \
+			-lc $(FLX_COMPILER_RT) \
+			$(FLX_CRT_END)

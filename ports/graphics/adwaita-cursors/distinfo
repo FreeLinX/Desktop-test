@@ -1,0 +1,5 @@
+# FreeLinX/ports - graphics/adwaita-cursors : upstream source reference.
+DISTINFO_NAME=adwaita-icon-theme-48.0
+DISTINFO_ARCHIVE=adwaita-icon-theme-48.0.tar.xz
+DISTINFO_URL=https://download.gnome.org/sources/adwaita-icon-theme/48/adwaita-icon-theme-48.0.tar.xz
+DISTINFO_SHA256=847068888650d9673115be6dbf2bfdc31a46aebc528a6a9db4420e60e656b8d4

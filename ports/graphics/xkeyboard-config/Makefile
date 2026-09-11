@@ -1,0 +1,39 @@
+# FreeLinX/ports - graphics/xkeyboard-config : X keyboard configuration data (2.44).
+#
+# Layout/keycodes/symbols data for libxkbcommon, installed as pure data at
+# datadir/X11/xkb (weston/libxkbcommon compile-time root /usr/share/X11/xkb).
+# Built with the HOST meson (data-only; python-driven generators run on host).
+NAME    := xkeyboard-config
+VERSION := 2.44
+CATEGORY:= graphics
+LICENSE := MIT/X11
+DEPENDENCIES:=
+BUILD_DEPENDENCIES:= (host only, data-only build)
+TARGET  := $(FREELINX_TRIPLE)
+PREFIX  := /
+
+include ../../mk/project-port.mk
+
+XKB_PREFIX = $(FREELINX_BUILD_DIR)/deps/$(NAME)
+MESON := /tmp/opencode/meson-1.6.1/meson.py
+SRC_TREE = $(FREELINX_BUILD_DIR)/work/$(NAME)/xkeyboard-config-xkeyboard-config-2.44-1691aef8fa12f63037f2ff956f902587d814a65c
+BUILD_DIR = $(FREELINX_BUILD_DIR)/obj/$(NAME)/native
+
+PROJECT_BIN = $(XKB_PREFIX)/share/X11/xkb/rules/evdev
+BUILD_BIN   = $(PROJECT_BIN)
+
+export PATH := /tmp/opencode/host-tools:$(PATH)
+
+PROJECT_CFG_CMDS = \
+	rm -rf "$(BUILD_DIR)" && mkdir -p "$(BUILD_DIR)" && \
+	python3 "$(MESON)" setup \
+		--buildtype=release \
+		-Ddatadir=share \
+		-Dcompat-rules=false -Dxorg-rules-symlinks=false \
+		-Dxkb-base=/usr/share/X11/xkb \
+		--prefix="$(XKB_PREFIX)" \
+		"$(BUILD_DIR)" "$(SRC_TREE)"
+
+BUILD_CMDS = \
+	python3 "$(MESON)" compile -C "$(BUILD_DIR)" -j"$(FREELINX_JOBS)" && \
+	python3 "$(MESON)" install -C "$(BUILD_DIR)"

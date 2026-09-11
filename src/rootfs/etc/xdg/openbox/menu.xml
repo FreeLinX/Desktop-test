@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="root-menu" label="FreeLinX">
+
+  <item label="FreeLinX Files">
+    <action name="Execute">
+      <command>fview</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+
+  <item label="FreeLinX Terminal">
+    <action name="Execute">
+      <command>fterm</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+
+  <item label="Obxprop (Window Info)">
+    <action name="Execute">
+      <command>fterm -e obxprop</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+
+  <separator label="System" />
+
+  <menu id="sys-menu" label="System">
+
+    <item label="Terminal: pfetch">
+      <action name="Execute">
+        <command>fterm -e pfetch</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+        </startupnotify>
+      </action>
+    </item>
+
+    <item label="Terminal: w3m">
+      <action name="Execute">
+        <command>fterm -e w3m</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+        </startupnotify>
+      </action>
+    </item>
+
+    <separator />
+
+    <item label="Reconfigure Openbox">
+      <action name="Reconfigure" />
+    </item>
+
+    <item label="Restart Openbox">
+      <action name="Restart" />
+    </item>
+
+    <item label="Log Out">
+      <action name="Exit">
+        <prompt>yes</prompt>
+      </action>
+    </item>
+
+  </menu>
+
+</menu>
+</openbox_menu>

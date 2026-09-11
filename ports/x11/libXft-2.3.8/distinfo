@@ -1,0 +1,4 @@
+# FreeLinX/ports - x11/libXft-2.3.8 : upstream source reference.
+DISTINFO_ARCHIVE=libXft-2.3.8.tar.gz
+DISTINFO_URL=https://www.x.org/releases/individual/lib/libXft-2.3.8.tar.gz
+DISTINFO_SHA256=32e48fe2d844422e64809e4e99b9d8aed26c1b541a5acf837c5037b8d9f278a8

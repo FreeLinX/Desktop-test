@@ -1,0 +1,4 @@
+# FreeLinX/ports - x11/libXau-1.0.11 : upstream source reference.
+DISTINFO_ARCHIVE=libXau-1.0.11.tar.gz
+DISTINFO_URL=https://www.x.org/releases/individual/lib/libXau-1.0.11.tar.gz
+DISTINFO_SHA256=3a321aaceb803577a4776a5efe78836eb095a9e44bbc7a465d29463e1a14f189

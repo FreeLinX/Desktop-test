@@ -1,0 +1,4 @@
+# FreeLinX/ports - x11/libpciaccess-0.19 : upstream source reference.
+DISTINFO_ARCHIVE=libpciaccess-0.19.tar.xz
+DISTINFO_URL=https://www.x.org/releases/individual/lib/libpciaccess-0.19.tar.xz
+DISTINFO_SHA256=3c55aa86c82e54a4e3109786f0463530d53b36b6d1cfd14616454f985dd2aa43

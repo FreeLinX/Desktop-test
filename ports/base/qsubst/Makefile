@@ -1,0 +1,32 @@
+# FreeLinX/ports - base/qsubst : NetBSD 10.1 `/usr/bin/qsubst`.
+NAME   := qsubst
+VERSION:= 10.1
+CATEGORY:= base
+LICENSE:= BSD-2-Clause
+DEPENDENCIES:=
+BUILD_DEPENDENCIES:= musl (via FreeLinX toolchain sysroot)
+TARGET := $(FREELINX_TRIPLE)
+PREFIX := /
+
+INSTALL_BIN:= qsubst
+INSTALL_RELPATH:= bin/qsubst
+
+include ../../mk/base-port.mk
+
+SRC_DIR  = $(FREELINX_BUILD_DIR)/work/$(NAME)
+OBJ_DIR  = $(FREELINX_BUILD_DIR)/obj/$(NAME)
+BUILD_BIN = $(SRC_DIR)/$(NAME)
+
+NETBSD_MEMBERS = usr/src/usr.bin/qsubst/qsubst.c
+
+PORT_SRCS = usr.bin/qsubst/qsubst.c
+COMPAT_SRCS += $(FLX_COMPAT)/sigstub.c
+
+NCURSES_PREFIX = $(FREELINX_BUILD_DIR)/deps/ncurses
+FLX_LD          = $(CC) $(FREELINX_CFLAGS) $(FREELINX_LDFLAGS) \
+			-nostdlib -L$(FREELINX_SYSROOT)/lib \
+			$(FLX_CRT) \
+			$(OBJ_DIR)/*.o \
+			$(NCURSES_PREFIX)/lib/libtinfo.a \
+			-lc $(FLX_COMPILER_RT) \
+			$(FLX_CRT_END)

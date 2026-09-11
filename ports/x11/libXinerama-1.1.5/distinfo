@@ -1,0 +1,4 @@
+# FreeLinX/ports - x11/libXinerama-1.1.5 : upstream source reference.
+DISTINFO_ARCHIVE=libXinerama-1.1.5.tar.gz
+DISTINFO_URL=https://www.x.org/releases/individual/lib/libXinerama-1.1.5.tar.gz
+DISTINFO_SHA256=2efa855cb42dc620eff3b77700d8655695e09aaa318f791f201fa60afa72b95c

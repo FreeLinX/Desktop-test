@@ -1,0 +1,4 @@
+# FreeLinX/ports - xfce/thunar-4.20.9 : upstream source reference.
+DISTINFO_ARCHIVE=thunar-4.20.9.tar.bz2
+DISTINFO_URL=https://archive.xfce.org/src/xfce/thunar/4.20/thunar-4.20.9.tar.bz2
+DISTINFO_SHA256=eb09869ce93b12ed285678967f55f243c833f2baf2fb10c9844ac7648d9270cb

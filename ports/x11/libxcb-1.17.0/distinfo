@@ -1,0 +1,4 @@
+# FreeLinX/ports - x11/libxcb-1.17.0 : upstream source reference.
+DISTINFO_ARCHIVE=libxcb-1.17.0.tar.gz
+DISTINFO_URL=https://www.x.org/releases/individual/lib/libxcb-1.17.0.tar.gz
+DISTINFO_SHA256=2c69287424c9e2128cb47ffe92171e10417041ec2963bceafb65cb3fcf8f0b85

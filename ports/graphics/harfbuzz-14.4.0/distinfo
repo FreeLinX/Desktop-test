@@ -1,0 +1,4 @@
+# FreeLinX/ports - graphics/harfbuzz-14.4.0 : upstream source reference.
+DISTINFO_ARCHIVE=harfbuzz-14.4.0.tar.xz
+DISTINFO_URL=https://github.com/harfbuzz/harfbuzz/releases/download/14.4.0/harfbuzz-14.4.0.tar.xz
+DISTINFO_SHA256=2357ed966c6ced7bfa720b0640c0231065af01158fbea215093ffa15aed44371

@@ -1,0 +1,6 @@
+# FreeLinX/ports - graphics/libinput : upstream source reference.
+# Ubuntu pool mirrors the unmodified upstream tarball (libinput-1.27.1.orig.tar.gz).
+DISTINFO_NAME=libinput-1.27.1
+DISTINFO_ARCHIVE=libinput-1.27.1.tar.gz
+DISTINFO_URL=http://archive.ubuntu.com/ubuntu/pool/main/libi/libinput/libinput_1.27.1.orig.tar.gz
+DISTINFO_SHA256=f6d623dd8230db337a6457645ebca96b9d4788a56385463bb14b8174910dfe23

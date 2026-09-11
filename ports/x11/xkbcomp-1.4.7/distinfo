@@ -1,0 +1,4 @@
+# FreeLinX/ports - x11/xkbcomp-1.4.7 : upstream source reference.
+DISTINFO_ARCHIVE=xkbcomp-1.4.7.tar.xz
+DISTINFO_URL=https://www.x.org/releases/individual/app/xkbcomp-1.4.7.tar.xz
+DISTINFO_SHA256=0a288114e5f44e31987042c79aecff1ffad53a8154b8ec971c24a69a80f81f77

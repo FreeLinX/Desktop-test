@@ -1,0 +1,5 @@
+# FreeLinX/ports - graphics/libxkbcommon : upstream source reference.
+DISTINFO_NAME=libxkbcommon-1.7.0
+DISTINFO_ARCHIVE=libxkbcommon-1.7.0.tar.gz
+DISTINFO_URL=https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-1.7.0.tar.gz
+DISTINFO_SHA256=20d5e40dabd927f7a7f4342bebb1e8c7a59241283c978b800ae3bf60394eabc4

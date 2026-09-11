@@ -1,0 +1,7 @@
+linux-6.6.21/
+linux-6.6.21.tar.xz
+*.o
+*.a
+build.log
+build2.log
+build3.log

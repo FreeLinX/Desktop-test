@@ -1,0 +1,5 @@
+# FreeLinX/ports - graphics/utf8proc : upstream source reference.
+DISTINFO_NAME=utf8proc-2.11.3
+DISTINFO_ARCHIVE=utf8proc-v2.11.3.tar.gz
+DISTINFO_URL=https://github.com/JuliaStrings/utf8proc/archive/refs/tags/v2.11.3.tar.gz
+DISTINFO_SHA256=abfed50b6d4da51345713661370290f4f4747263ee73dc90356299dfc7990c78

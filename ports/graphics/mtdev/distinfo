@@ -1,0 +1,5 @@
+# FreeLinX/ports - graphics/mtdev : upstream source reference.
+DISTINFO_NAME=mtdev-1.1.6
+DISTINFO_ARCHIVE=mtdev-1.1.6.tar.bz2
+DISTINFO_URL=http://bitmath.org/code/mtdev/mtdev-1.1.6.tar.bz2
+DISTINFO_SHA256=15d7b28da8ac71d8bc8c9287c2045fd174267bc740bec10cfda332dc1204e0e0

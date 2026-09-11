@@ -1,0 +1,4 @@
+# FreeLinX/ports - xfce/xfce4-terminal-1.2.0 : upstream source reference.
+DISTINFO_ARCHIVE=xfce4-terminal-1.2.0.tar.xz
+DISTINFO_URL=https://archive.xfce.org/src/apps/xfce4-terminal/1.2/xfce4-terminal-1.2.0.tar.xz
+DISTINFO_SHA256=6874c7b975cc3dc3bd636d57ffec723de7458202defe65377593d3a7e0734b94

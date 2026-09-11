@@ -1,0 +1,5 @@
+# FreeLinX/ports - graphics/libudev-zero : upstream source reference.
+DISTINFO_NAME=libudev-zero-1.0.5
+DISTINFO_ARCHIVE=libudev-zero-1.0.5.tar.gz
+DISTINFO_URL=https://github.com/illiliti/libudev-zero/archive/refs/tags/1.0.5.tar.gz
+DISTINFO_SHA256=bf4372f79ddbe6b0e266a3d2994ffac7018a7edf4f87632aecb5176565d96138

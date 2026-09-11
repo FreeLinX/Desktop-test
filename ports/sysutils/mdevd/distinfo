@@ -1,0 +1,8 @@
+# FreeLinX/ports - sysutils/mdevd : Linux hotplug device daemon 0.1.8.1.
+#
+# Real upstream source: https://skarnet.org/software/mdevd/mdevd-0.1.8.1.tar.gz
+# Manages /dev nodes on Linux via netlink uevents.
+DISTINFO_NAME=mdevd-0.1.8.1
+DISTINFO_ARCHIVE=mdevd-0.1.8.1.tar.gz
+DISTINFO_URL=https://skarnet.org/software/mdevd/mdevd-0.1.8.1.tar.gz
+DISTINFO_SHA256=93d2bba7299ff3b1b9f249928c2e84e23a5af3d829ebd9677ea44535c585aa82

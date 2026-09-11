@@ -1,0 +1,5 @@
+# FreeLinX/ports - graphics/weston : upstream source reference (git tag 13.0.1).
+DISTINFO_NAME=weston-13.0.1-fad928ca37beb3bdf70f33bcfcb12149e4da217d
+DISTINFO_ARCHIVE=weston-13.0.1.tar.gz
+DISTINFO_URL=https://gitlab.freedesktop.org/wayland/weston/-/archive/13.0.1/weston-13.0.1.tar.gz
+DISTINFO_SHA256=d61683ff94e5107e5833ed125358b73a1f419cdce841da307569ff38104ac9e6

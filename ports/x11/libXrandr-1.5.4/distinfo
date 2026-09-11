@@ -1,0 +1,4 @@
+# FreeLinX/ports - x11/libXrandr-1.5.4 : upstream source reference.
+DISTINFO_ARCHIVE=libXrandr-1.5.4.tar.gz
+DISTINFO_URL=https://www.x.org/releases/individual/lib/libXrandr-1.5.4.tar.gz
+DISTINFO_SHA256=c72c94dc3373512ceb67f578952c5d10915b38cc9ebb0fd176a49857b8048e22

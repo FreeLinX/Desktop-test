@@ -1,0 +1,4 @@
+# FreeLinX/ports - graphics/gettext-0.23 : upstream source reference.
+DISTINFO_ARCHIVE=gettext-0.23.tar.xz
+DISTINFO_URL=https://ftp.gnu.org/gnu/gettext/gettext-0.23.tar.xz
+DISTINFO_SHA256=bf31a9b6bdf3e364669c7bd9858f97e4a0c408a8d22940c5d4ab638b65460f85

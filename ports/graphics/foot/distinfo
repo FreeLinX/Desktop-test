@@ -1,0 +1,4 @@
+# FreeLinX/ports - graphics/foot : upstream source reference.
+DISTINFO_ARCHIVE=foot-1.28.0.tar.gz
+DISTINFO_URL=https://codeberg.org/dnkl/foot/archive/1.28.0.tar.gz
+DISTINFO_SHA256=4296be402b5684d049534598e69db92b918f92beac9dab76b585207045f0b037

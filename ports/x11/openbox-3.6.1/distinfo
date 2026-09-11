@@ -1,0 +1,5 @@
+# FreeLinX/ports - x11/openbox-3.6.1 : upstream source reference.
+DISTINFO_NAME=openbox-3.6.1
+DISTINFO_ARCHIVE=openbox-3.6.1.tar.xz
+DISTINFO_URL=http://openbox.org/dist/openbox/openbox-3.6.1.tar.xz
+DISTINFO_SHA256=abe75855cc5616554ffd47134ad15291fe37ebbebf1a80b69cbde9d670f0e26d

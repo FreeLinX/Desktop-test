@@ -1,0 +1,5 @@
+# FreeLinX/ports - graphics/libevdev : upstream source reference.
+DISTINFO_NAME=libevdev-1.13.7
+DISTINFO_ARCHIVE=libevdev-1.13.7.tar.gz
+DISTINFO_URL=https://gitlab.freedesktop.org/libevdev/libevdev/-/archive/libevdev-1.13.7/libevdev-1.13.7.tar.gz
+DISTINFO_SHA256=67b0145f18acd342e5d068dd84d9596c5342323b479110e9ed3f399c5be928e6

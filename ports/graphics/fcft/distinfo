@@ -1,0 +1,4 @@
+# FreeLinX/ports - graphics/fcft : upstream source reference.
+DISTINFO_ARCHIVE=fcft-3.3.3.tar.gz
+DISTINFO_URL=https://codeberg.org/dnkl/fcft/archive/3.3.3.tar.gz
+DISTINFO_SHA256=b0c0f4a599f43723736c8565b8b84337c4195077f07f1bb8bb3252bb13a2306a
